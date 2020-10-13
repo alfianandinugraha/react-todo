@@ -219,6 +219,12 @@ header#Header {
   display: flex;
   flex-direction: column;
 
+  .close-sidebar-btn {
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+  }
+
   .sidebar {
     &__title {
       font-size: 20px;
