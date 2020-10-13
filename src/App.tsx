@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from './Components/Header'
 
 interface Props {
   
@@ -13,6 +14,7 @@ export default class App extends Component<Props, State> {
   render() {
     return (
       <div>
+        <Header />
       </div>
     )
   }
