@@ -14,9 +14,18 @@ export default class ItemTodo extends Component<Props, State> {
   render() {
     const { content, isDone } = this.props.todo;
 
+    const checkElement = isDone ? (
+      <div className="todo__item__check">
+        <svg xmlns="http://www.w3.org/2000/svg" width="23.654" height="15.259" viewBox="0 0 23.654 15.259">
+          <path id="check-done" d="M47.372,465.464l8.748,8.748,14.2-14.2" transform="translate(-47.018 -459.66)" fill="none" stroke="#4b4b4b" stroke-width="1" />
+        </svg>
+      </div>
+    ) : '';
+
     return (
       <section className={"todo" + (isDone ? " todo--done" : "")}>
         <div className="todo__item">
+          {checkElement}
           <div className="circle"></div>
           <p>{content}</p>
           <div>

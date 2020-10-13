@@ -45,6 +45,7 @@ header#Header {
     &__item {
       display: flex;
       align-items: center;
+      position: relative;
 
       p {
         margin-left: 1rem;
@@ -52,6 +53,11 @@ header#Header {
 
       div:last-child {
         margin-left: auto;
+      }
+
+      &__check {
+        position: absolute;
+        bottom: 3px;
       }
     }
 
