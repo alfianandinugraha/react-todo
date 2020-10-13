@@ -35,8 +35,24 @@ header#Header {
   color: white;
   height: 158px;
   display: flex;
-  align-items: center;
   border-radius: 0 0 10px 10px;
+
+  .header {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+      margin: auto 0;
+      font-size: 30px;
+    }
+
+    &__icon-nav {
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
 }
 
 #todos {
