@@ -38,6 +38,7 @@ header#Header {
     padding: 1rem;
     margin-bottom: 1rem;
     transition: background-color .5s;
+    border-radius: 5px;
 
     &__item {
       display: flex;
@@ -64,4 +65,5 @@ header#Header {
   width: 18px;
   border: 1px solid #c9c9c9;
   border-radius: 18px;
+  background-color: white;
 }
