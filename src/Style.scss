@@ -10,6 +10,20 @@ $primary-color: #307672;
   padding: 0 1rem;
 }
 
+.content {
+  margin-top: 2rem;
+}
+
+.message {
+  margin-bottom: .5rem;
+  display: block;
+}
+
+i {
+  font-size: 13px;
+  color: #787878;
+}
+
 header#Header {
   background-color: $primary-color;
   color: white;
@@ -17,4 +31,31 @@ header#Header {
   display: flex;
   align-items: center;
   border-radius: 0 0 10px 10px;
+}
+
+#todos {
+  .todo {
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+    &__item {
+      display: flex;
+      align-items: center;
+
+      p {
+        margin-left: 1rem;
+      }
+
+      div:last-child {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+.circle {
+  height: 18px;
+  width: 18px;
+  border: 1px solid #c9c9c9;
+  border-radius: 18px;
 }

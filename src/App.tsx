@@ -18,8 +18,11 @@ export default class App extends Component<Props, State> {
     return (
       <div>
         <Header />
-        <div id="todos">
-          {todoElementsTsx}
+        <div className="container content">
+          <i className="message">Klik untuk menyelesaikan aktifitas</i>
+          <div id="todos">
+            {todoElementsTsx}
+          </div>
         </div>
       </div>
     )
