@@ -84,7 +84,7 @@ export default class App extends Component<Props, State> {
 
   addTodo(todo: Todo) {
     const newTodos: Todo[] = this.state.todos;
-    newTodos.push(todo);
+    newTodos.unshift(todo);
 
     this.setState({
       todos: newTodos
