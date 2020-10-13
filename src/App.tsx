@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import FormAddTodo from './Components/FormAddTodo'
 import Header from './Components/Header'
 import ItemTodo from './Components/ItemTodo'
+import Sidebar from './Components/Sidebar'
 
 interface Props {
   
@@ -129,6 +130,7 @@ export default class App extends Component<Props, State> {
 
     return (
       <div>
+        <Sidebar />
         <Header />
         <div className="container content">
           <i className="message">Klik untuk menyelesaikan aktifitas</i>
