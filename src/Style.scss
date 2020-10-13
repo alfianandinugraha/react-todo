@@ -219,6 +219,30 @@ header#Header {
   cursor: pointer;
 }
 
+@keyframes show-sidebar {
+  from {
+    left: -300px;
+  }
+
+  to {
+    left: 0;
+  }
+}
+
+@keyframes hide-sidebar {
+  from {
+    left: 0;
+  }
+
+  to {
+    left: -300px;
+  }
+}
+
+.showing-sidebar {
+  animation: hide-sidebar .5s forwards !important;
+}
+
 #sidebar {
   position: fixed;
   background-color: white;
@@ -229,6 +253,7 @@ header#Header {
   padding-bottom: 18px;
   display: flex;
   flex-direction: column;
+  animation: show-sidebar .5s forwards;
 
   .close-sidebar-btn {
     position: absolute;

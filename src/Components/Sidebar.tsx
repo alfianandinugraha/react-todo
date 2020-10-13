@@ -5,11 +5,17 @@ interface Props {
 }
 
 export default class Sidebar extends Component<Props, {}> {
+  toggleSidebar() {
+    let sidebarElement = document.getElementById('sidebar')
+    sidebarElement?.classList.add('showing-sidebar')
+    this.props.toggleSidebar()
+  }
+
   render() {
     return (
       <div>
         <aside id="sidebar" className="container sidebar">
-          <div className="close-sidebar-btn" onClick={() => this.props.toggleSidebar()}>
+          <div className="close-sidebar-btn" onClick={() => this.toggleSidebar()}>
             <svg xmlns="http://www.w3.org/2000/svg" width="26.87" height="26.87" viewBox="0 0 26.87 26.87">
               <g id="close-btn" transform="translate(-286.065 -49.065)">
                 <rect id="Rectangle_5" data-name="Rectangle 5" width="35" height="3" rx="1.5" transform="translate(288.186 49.065) rotate(45)" fill="#d90000" />
@@ -30,7 +36,7 @@ export default class Sidebar extends Component<Props, {}> {
             >https://linktr.ee/alfianandinugraha</a>
           </div>
         </aside>
-        <div className="backdrop" onClick={() => this.props.toggleSidebar()}></div>
+        <div className="backdrop" onClick={() => this.toggleSidebar()}></div>
       </div>
     )
   }

@@ -63,11 +63,11 @@ export default class App extends Component<Props, State> {
   }
 
   toggleSidebar() {
-    this.setState((prevState: State) => {
-      return {
-        isSidebarShow: !prevState.isSidebarShow
-      }
-    })
+    const timeout = this.state.isSidebarShow ? 500 : 0;
+
+    setTimeout(() => {
+      this.setState((prevState: State) => ({isSidebarShow: !prevState.isSidebarShow}))
+    }, timeout)
   }
 
   toggleTodo(id: number) {
