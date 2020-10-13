@@ -67,7 +67,7 @@ export default class App extends Component<Props, State> {
       todos: newTodos
     })
 
-    return;
+    localStorage.removeItem(`react-todo-${id}`)
   }
 
   addTodo(todo: Todo) {
