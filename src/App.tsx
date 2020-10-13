@@ -46,8 +46,8 @@ export default class App extends Component<Props, State> {
     const todosDone: Todo[] = todos.filter(todo => todo.isDone === true)
     const todosNotDone: Todo[] = todos.filter(todo => todo.isDone === false)
 
-    todosDone.sort((a, b) => b.id - a.id)
-    todosNotDone.sort((a, b) => b.id - a.id)
+    todosDone.sort((a, b) => a.id - b.id)
+    todosNotDone.sort((a, b) => a.id - b.id)
 
     this.setState({
       todos: [...todosNotDone, ...todosDone]
