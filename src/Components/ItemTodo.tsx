@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
+import { Todo } from '../App'
 
 interface Props {
-  
+  todo: Todo
 }
 interface State {
   
@@ -11,11 +12,13 @@ export default class ItemTodo extends Component<Props, State> {
   state = {}
 
   render() {
+    const { content } = this.props.todo;
+
     return (
       <section className="todo">
         <div className="todo__item">
           <div className="circle"></div>
-          <p>Hello world !</p>
+          <p>{content}</p>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16.474" height="17.972" viewBox="0 0 16.474 17.972">
               <g id="trash-can" transform="translate(-1)">

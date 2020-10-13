@@ -51,7 +51,7 @@ export default class App extends Component<Props, State> {
     const todoElementsTsx = this
       .state
       .todos
-      .map((val: Todo, index: number) => <ItemTodo key={index} />)
+      .map((val: Todo, index: number) => <ItemTodo key={val.id} todo={val}/>)
     
     const formAddTodoElement =
       this.state.isFormShow ?
