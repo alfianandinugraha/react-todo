@@ -6,13 +6,21 @@ import ItemTodo from './Components/ItemTodo'
 interface Props {
   
 }
+
+export interface Todo {
+  id: number;
+  content: string;
+
+}
 interface State {
   isFormShow: boolean;
+  todos: Todo[]
 }
 
 export default class App extends Component<Props, State> {
   state: State = {
-    isFormShow: false
+    isFormShow: false,
+    todos: []
   }
 
   toggleFormAddTodo() {
