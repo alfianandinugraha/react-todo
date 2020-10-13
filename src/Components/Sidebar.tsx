@@ -1,11 +1,15 @@
 import React, { Component } from 'react'
 
-export default class Sidebar extends Component {
+interface Props {
+  toggleSidebar: () => any;
+}
+
+export default class Sidebar extends Component<Props, {}> {
   render() {
     return (
       <div>
         <aside id="sidebar" className="container sidebar">
-          <div className="close-sidebar-btn">
+          <div className="close-sidebar-btn" onClick={() => this.props.toggleSidebar()}>
             <svg xmlns="http://www.w3.org/2000/svg" width="26.87" height="26.87" viewBox="0 0 26.87 26.87">
               <g id="close-btn" transform="translate(-286.065 -49.065)">
                 <rect id="Rectangle_5" data-name="Rectangle 5" width="35" height="3" rx="1.5" transform="translate(288.186 49.065) rotate(45)" fill="#d90000" />

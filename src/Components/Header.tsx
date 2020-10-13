@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 interface Props {
-  
+  toggleSidebar: () => any;
 }
 interface State {
   
@@ -14,7 +14,7 @@ export default class Header extends Component<Props, State> {
     return (
       <header id="Header">
         <div className="header container">
-          <div className="header__icon-nav">
+          <div className="header__icon-nav" onClick={() => this.props.toggleSidebar()}>
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="23" viewBox="0 0 35 23">
               <g id="hambuger-menu" transform="translate(-36 -18)">
                 <rect id="Rectangle_5" data-name="Rectangle 5" width="35" height="3" rx="1.5" transform="translate(36 18)" fill="#fff" />

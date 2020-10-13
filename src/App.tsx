@@ -15,12 +15,14 @@ export interface Todo {
 }
 interface State {
   isFormShow: boolean;
+  isSidebarShow: boolean;
   todos: Todo[]
 }
 
 export default class App extends Component<Props, State> {
   state: State = {
     isFormShow: false,
+    isSidebarShow: false,
     todos: [
       {
         id: 1,
@@ -44,6 +46,14 @@ export default class App extends Component<Props, State> {
     this.setState((prevState: State) => {
       return {
         isFormShow: !prevState.isFormShow
+      }
+    })
+  }
+
+  toggleSidebar() {
+    this.setState((prevState: State) => {
+      return {
+        isSidebarShow: !prevState.isSidebarShow
       }
     })
   }
@@ -126,12 +136,14 @@ export default class App extends Component<Props, State> {
     
     const formAddTodoElement =
       this.state.isFormShow ?
-        <FormAddTodo toggleForm={this.toggleFormAddTodo.bind(this)} addTodo={this.addTodo.bind(this)}/> : '';
+        <FormAddTodo toggleForm={this.toggleFormAddTodo.bind(this)} addTodo={this.addTodo.bind(this)} /> : '';
+    
+    const sidebarElement = this.state.isSidebarShow ? <Sidebar toggleSidebar={this.toggleSidebar.bind(this)}/> : '';
 
     return (
       <div>
-        <Sidebar />
-        <Header />
+        {sidebarElement}
+        <Header toggleSidebar={this.toggleSidebar.bind(this)}/>
         <div className="container content">
           <i className="message">Klik untuk menyelesaikan aktifitas</i>
           <div id="todos">
