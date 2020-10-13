@@ -30,7 +30,7 @@ export default class Sidebar extends Component<Props, {}> {
             >https://linktr.ee/alfianandinugraha</a>
           </div>
         </aside>
-        <div className="backdrop"></div>
+        <div className="backdrop" onClick={() => this.props.toggleSidebar()}></div>
       </div>
     )
   }

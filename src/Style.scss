@@ -206,6 +206,7 @@ header#Header {
   bottom: 0;
   z-index: 50;
   animation: show-backdrop .5s forwards;
+  cursor: pointer;
 }
 
 #sidebar {
