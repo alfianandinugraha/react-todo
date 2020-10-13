@@ -7,14 +7,26 @@ interface Props {
   
 }
 interface State {
-  
+  isFormShow: boolean;
 }
 
 export default class App extends Component<Props, State> {
-  state = {}
+  state: State = {
+    isFormShow: false
+  }
+
+  toggleFormAddTodo() {
+    this.setState((prevState: State) => {
+      return {
+        isFormShow: !prevState.isFormShow
+      }
+    })
+  }
 
   render() {
-    const todoElementsTsx = [1, 2, 3, 4, 5].map((val: any, index: number) => <ItemTodo key={index}/>)
+    const todoElementsTsx = [1, 2, 3, 4, 5].map((val: any, index: number) => <ItemTodo key={index} />)
+    
+    const formAddTodoElement = this.state.isFormShow ? <FormAddTodo /> : '';
 
     return (
       <div>
@@ -26,9 +38,12 @@ export default class App extends Component<Props, State> {
           </div>
         </div>
         <div className="show-form-btn container">
-          <button className="button button--primary show-form">Tambah Aktifitas</button>
+          <button
+            className="button button--primary show-form"
+            onClick={() => this.toggleFormAddTodo()}
+          >Tambah Aktifitas</button>
         </div>
-        <FormAddTodo />
+        {formAddTodoElement}
       </div>
     )
   }
