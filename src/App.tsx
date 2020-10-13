@@ -71,16 +71,14 @@ export default class App extends Component<Props, State> {
   }
 
   render() {
-    const todoElementsTsx = this
-      .state
-      .todos
-      .map((val: Todo, index: number) =>
+    const todoElementsTsx =
+      this.state.todos.length ? this.state.todos.map((val: Todo, index: number) =>
         <ItemTodo
           key={val.id}
           todo={val}
           toggelTodo={this.toggleTodo.bind(this)}
           deleteTodo={this.deleteTodo.bind(this)}
-        />)
+        />) : <p className="no-todo-message">Tidak ada aktifitas, silahkan klik Tambah Aktifitas</p>;
     
     const formAddTodoElement =
       this.state.isFormShow ?
