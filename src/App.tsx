@@ -10,7 +10,7 @@ interface Props {
 export interface Todo {
   id: number;
   content: string;
-
+  isDone: boolean;
 }
 interface State {
   isFormShow: boolean;
@@ -20,7 +20,23 @@ interface State {
 export default class App extends Component<Props, State> {
   state: State = {
     isFormShow: false,
-    todos: []
+    todos: [
+      {
+        id: 1,
+        content: "Lorem, ipsum dolor.",
+        isDone: false
+      },
+      {
+        id: 2,
+        content: "Lorem, ipsum dolor.",
+        isDone: false
+      },
+      {
+        id: 3,
+        content: "Lorem, ipsum dolor.",
+        isDone: false
+      }
+    ]
   }
 
   toggleFormAddTodo() {
@@ -32,7 +48,10 @@ export default class App extends Component<Props, State> {
   }
 
   render() {
-    const todoElementsTsx = [1, 2, 3, 4, 5].map((val: any, index: number) => <ItemTodo key={index} />)
+    const todoElementsTsx = this
+      .state
+      .todos
+      .map((val: Todo, index: number) => <ItemTodo key={index} />)
     
     const formAddTodoElement =
       this.state.isFormShow ?
