@@ -124,8 +124,6 @@ export default class App extends Component<Props, State> {
       newTodos.push(todo)
     }
 
-    newTodos.sort((a, b) => b.id - a.id)
-
     this.setTodos(newTodos)
   }
 
