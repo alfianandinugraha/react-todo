@@ -152,6 +152,30 @@ header#Header {
   }
 }
 
+@keyframes show-form-add-todo {
+  from {
+    bottom: -250px;
+  }
+
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes hide-form-add-todo {
+  from {
+    bottom: 0;
+  }
+
+  to {
+    bottom: -250px;
+  }
+}
+
+.hide-add-todo {
+  animation: hide-form-add-todo .5s forwards !important;
+}
+
 .add-todo {
   background-color: $primary-color;
   z-index: 100;
@@ -161,6 +185,14 @@ header#Header {
   left: 0;
   padding: 1rem 0;
   border-radius: 5px 5px 0 0;
+  height: 250px;
+  animation: show-form-add-todo .5s forwards;
+
+  .container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 
   h3 {
     color: white;
@@ -175,7 +207,7 @@ header#Header {
   }
 
   &__button-group {
-    margin-top: 5rem;
+    margin-top: auto;
     display: flex;
     justify-content: space-between;
 

@@ -30,15 +30,23 @@ export default class FormAddTodo extends Component<Props, State> {
     })
   }
 
+  toggleForm() {
+    document.getElementById('add-todo')?.classList.add('hide-add-todo')
+    this.props.toggleForm()
+  }
+
   addTodo() {
-    if (this.state.todo.content) return this.props.addTodo(this.state.todo)
+    if (this.state.todo.content) {
+      this.toggleForm()
+      this.props.addTodo(this.state.todo)
+    }
     this.setState({isValidContent: false})
   }
 
   render() {
     return (
       <div>
-        <div className="add-todo">
+        <div className="add-todo" id="add-todo">
           <div className="container">
             <h3>Tambah Aktifitas</h3>
             <input
@@ -53,14 +61,14 @@ export default class FormAddTodo extends Component<Props, State> {
             <div className="add-todo__button-group">
               <button
                 className="button button--primary"
-                onClick={() => this.props.toggleForm()}>Kembali</button>
+                onClick={() => this.toggleForm()}>Kembali</button>
               <button className="button button--secondary" onClick={
                 () => this.addTodo()
               }>Tambah</button>
             </div>
           </div>
         </div>
-        <div className="backdrop" onClick={() => this.props.toggleForm()}></div>
+        <div className="backdrop" onClick={() => this.toggleForm()}></div>
       </div>
     )
   }

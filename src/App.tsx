@@ -55,11 +55,11 @@ export default class App extends Component<Props, State> {
   }
 
   toggleFormAddTodo() {
-    this.setState((prevState: State) => {
-      return {
-        isFormShow: !prevState.isFormShow
-      }
-    })
+    const timeout = this.state.isFormShow ? 500 : 0;
+    
+    setTimeout(() => {
+      this.setState((prevState: State) => ({ isFormShow: !prevState.isFormShow }))
+    }, timeout)
   }
 
   toggleSidebar() {
@@ -97,7 +97,6 @@ export default class App extends Component<Props, State> {
     newTodos.unshift(todo);
 
     this.setTodos(newTodos)
-    this.toggleFormAddTodo()
 
     localStorage.setItem(`react-todo-${todo.id}`, `${todo.content}|||${todo.isDone}`)
   }
