@@ -4,6 +4,7 @@ import { Todo } from '../App'
 interface Props {
   todo: Todo;
   toggelTodo: (id: number) => any;
+  deleteTodo: (id: number) => any;
 }
 interface State {
   
@@ -30,7 +31,7 @@ export default class ItemTodo extends Component<Props, State> {
           <div className="circle"></div>
           <p>{content}</p>
         </div>
-        <div className="todo__trash">
+        <div className="todo__trash" onClick={() => this.props.deleteTodo(id)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16.474" height="17.972" viewBox="0 0 16.474 17.972">
             <g id="trash-can" transform="translate(-1)">
               <path id="Path_1" data-name="Path 1" d="M16.912,7.118H1.562A.562.562,0,0,1,1,6.557v-1.5A2.061,2.061,0,0,1,3.059,3H15.415a2.061,2.061,0,0,1,2.059,2.059v1.5A.562.562,0,0,1,16.912,7.118Z" transform="translate(0 -0.754)" fill="#d90000" />

@@ -60,6 +60,16 @@ export default class App extends Component<Props, State> {
     return;
   }
 
+  deleteTodo(id: number) {
+    const newTodos: Todo[] = this.state.todos.filter((todo: Todo) => todo.id !== id)
+    
+    this.setState({
+      todos: newTodos
+    })
+
+    return;
+  }
+
   render() {
     const todoElementsTsx = this
       .state
@@ -69,6 +79,7 @@ export default class App extends Component<Props, State> {
           key={val.id}
           todo={val}
           toggelTodo={this.toggleTodo.bind(this)}
+          deleteTodo={this.deleteTodo.bind(this)}
         />)
     
     const formAddTodoElement =
