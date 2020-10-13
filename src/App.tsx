@@ -42,6 +42,18 @@ export default class App extends Component<Props, State> {
     ]
   }
 
+  setTodos(todos: Todo[]) {
+    const todosDone: Todo[] = todos.filter(todo => todo.isDone === true)
+    const todosNotDone: Todo[] = todos.filter(todo => todo.isDone === false)
+
+    todosDone.sort((a, b) => b.id - a.id)
+    todosNotDone.sort((a, b) => b.id - a.id)
+
+    this.setState({
+      todos: [...todosNotDone, ...todosDone]
+    })
+  }
+
   toggleFormAddTodo() {
     this.setState((prevState: State) => {
       return {
@@ -59,17 +71,15 @@ export default class App extends Component<Props, State> {
   }
 
   toggleTodo(id: number) {
-    const newTodos: Todo[] = this.state.todos.map(val => {
+    let newTodos: Todo[] = this.state.todos.map(val => {
       if (val.id === id) {
         val.isDone = !val.isDone
         localStorage.setItem(`react-todo-${id}`, `${val.content}|||${val.isDone}`)
       };
       return val;
     })
-
-    this.setState({
-      todos: newTodos
-    })
+    
+    this.setTodos(newTodos)
   }
 
   deleteTodo(id: number) {
@@ -86,17 +96,14 @@ export default class App extends Component<Props, State> {
     const newTodos: Todo[] = this.state.todos;
     newTodos.unshift(todo);
 
-    this.setState({
-      todos: newTodos
-    })
-
+    this.setTodos(newTodos)
     this.toggleFormAddTodo()
 
     localStorage.setItem(`react-todo-${todo.id}`, `${todo.content}|||${todo.isDone}`)
   }
 
   componentDidMount() {
-    const newTodo: Todo[] = [];
+    const newTodos: Todo[] = [];
 
     for (let i = 0; i < localStorage.length; i++) {
       const idTodoLocalStorage: string = localStorage.key(i) || '';
@@ -114,14 +121,12 @@ export default class App extends Component<Props, State> {
         isDone: localStorageContentArray[1] === "true" ? true : false
       }
       
-      newTodo.push(todo)
+      newTodos.push(todo)
     }
 
-    newTodo.sort((a, b) => b.id - a.id)
+    newTodos.sort((a, b) => b.id - a.id)
 
-    this.setState({
-      todos: newTodo
-    })
+    this.setTodos(newTodos)
   }
 
   render() {
