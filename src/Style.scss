@@ -37,6 +37,7 @@ header#Header {
   .todo {
     padding: 1rem;
     margin-bottom: 1rem;
+    transition: background-color .5s;
 
     &__item {
       display: flex;
@@ -49,6 +50,11 @@ header#Header {
       div:last-child {
         margin-left: auto;
       }
+    }
+
+    &:hover {
+      background-color: #ebebeb;
+      transition: background-color .5s;
     }
   }
 }
