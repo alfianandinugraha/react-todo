@@ -49,15 +49,16 @@ export default class App extends Component<Props, State> {
 
   toggleTodo(id: number) {
     const newTodos: Todo[] = this.state.todos.map(val => {
-      if (val.id === id) val.isDone = !val.isDone;
+      if (val.id === id) {
+        val.isDone = !val.isDone
+        localStorage.setItem(`react-todo-${id}`, `${val.content}|||${val.isDone}`)
+      };
       return val;
     })
 
     this.setState({
       todos: newTodos
     })
-    
-    return;
   }
 
   deleteTodo(id: number) {
