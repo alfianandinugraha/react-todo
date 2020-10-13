@@ -185,6 +185,10 @@ header#Header {
       &--primary {
         border: 1px solid white;
       }
+
+      &--secondary {
+        box-shadow: 0 3px 6px 0 rgba($color: black, $alpha: 0.16);
+      }
     }
   }
 
