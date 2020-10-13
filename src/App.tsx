@@ -117,7 +117,7 @@ export default class App extends Component<Props, State> {
       newTodo.push(todo)
     }
 
-    newTodo.sort((a, b) => a.id - b.id)
+    newTodo.sort((a, b) => b.id - a.id)
 
     this.setState({
       todos: newTodo
