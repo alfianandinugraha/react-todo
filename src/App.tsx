@@ -79,6 +79,37 @@ export default class App extends Component<Props, State> {
     })
 
     this.toggleFormAddTodo()
+
+    localStorage.setItem(`react-todo-${todo.id}`, `${todo.content}|||${todo.isDone}`)
+  }
+
+  componentDidMount() {
+    const newTodo: Todo[] = [];
+
+    for (let i = 0; i < localStorage.length; i++) {
+      const idTodoLocalStorage: string = localStorage.key(i) || '';
+      
+      if (!idTodoLocalStorage.includes('react-todo-')) continue;
+
+      const parseId = +idTodoLocalStorage.substring(11, idTodoLocalStorage.length);
+      
+      let localStorageContent = localStorage.getItem(idTodoLocalStorage) || "";
+      let localStorageContentArray = localStorageContent.split("|||");
+      
+      let todo: Todo = {
+        id: parseId,
+        content: localStorageContentArray[0],
+        isDone: localStorageContentArray[1] === "true" ? true : false
+      }
+      
+      newTodo.push(todo)
+    }
+
+    newTodo.sort((a, b) => a.id - b.id)
+
+    this.setState({
+      todos: newTodo
+    })
   }
 
   render() {
