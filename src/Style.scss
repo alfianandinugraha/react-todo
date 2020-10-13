@@ -100,3 +100,40 @@ header#Header {
     width: 100%;
   }
 }
+
+.add-todo {
+  background-color: $primary-color;
+  z-index: 100;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 1rem 0;
+  border-radius: 5px 5px 0 0;
+
+  h3 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  input {
+    width: 100%;
+    border-radius: 5px;
+    padding: .75rem;
+    border: 0;
+  }
+
+  &__button-group {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+
+    .button {
+      width: 47%;
+
+      &--primary {
+        border: 1px solid white;
+      }
+    }
+  }
+}

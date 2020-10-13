@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import FormAddTodo from './Components/FormAddTodo'
 import Header from './Components/Header'
 import ItemTodo from './Components/ItemTodo'
 
@@ -27,6 +28,7 @@ export default class App extends Component<Props, State> {
         <div className="show-form-btn container">
           <button className="button button--primary show-form">Tambah Aktifitas</button>
         </div>
+        <FormAddTodo />
       </div>
     )
   }
