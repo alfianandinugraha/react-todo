@@ -39,6 +39,7 @@ header#Header {
     margin-bottom: 1rem;
     transition: background-color .5s;
     border-radius: 5px;
+    cursor: pointer;
 
     &__item {
       display: flex;
