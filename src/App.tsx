@@ -47,11 +47,29 @@ export default class App extends Component<Props, State> {
     })
   }
 
+  toggleTodo(id: number) {
+    const newTodos: Todo[] = this.state.todos.map(val => {
+      if (val.id === id) val.isDone = !val.isDone;
+      return val;
+    })
+
+    this.setState({
+      todos: newTodos
+    })
+    
+    return;
+  }
+
   render() {
     const todoElementsTsx = this
       .state
       .todos
-      .map((val: Todo, index: number) => <ItemTodo key={val.id} todo={val}/>)
+      .map((val: Todo, index: number) =>
+        <ItemTodo
+          key={val.id}
+          todo={val}
+          toggelTodo={this.toggleTodo.bind(this)}
+        />)
     
     const formAddTodoElement =
       this.state.isFormShow ?

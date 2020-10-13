@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { Todo } from '../App'
 
 interface Props {
-  todo: Todo
+  todo: Todo;
+  toggelTodo: (id: number) => any;
 }
 interface State {
   
@@ -12,12 +13,12 @@ export default class ItemTodo extends Component<Props, State> {
   state = {}
 
   render() {
-    const { content, isDone } = this.props.todo;
+    const { id, content, isDone } = this.props.todo;
 
     const checkElement = isDone ? (
       <div className="todo__item__check">
         <svg xmlns="http://www.w3.org/2000/svg" width="23.654" height="15.259" viewBox="0 0 23.654 15.259">
-          <path id="check-done" d="M47.372,465.464l8.748,8.748,14.2-14.2" transform="translate(-47.018 -459.66)" fill="none" stroke="#4b4b4b" stroke-width="1" />
+          <path id="check-done" d="M47.372,465.464l8.748,8.748,14.2-14.2" transform="translate(-47.018 -459.66)" fill="none" stroke="#4b4b4b" strokeWidth="1" />
         </svg>
       </div>
     ) : '';
@@ -27,7 +28,7 @@ export default class ItemTodo extends Component<Props, State> {
         <div className="todo__item">
           {checkElement}
           <div className="circle"></div>
-          <p>{content}</p>
+          <p onClick={() => this.props.toggelTodo(id)}>{content}</p>
           <div>
             <svg xmlns="http://www.w3.org/2000/svg" width="16.474" height="17.972" viewBox="0 0 16.474 17.972">
               <g id="trash-can" transform="translate(-1)">
