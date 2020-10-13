@@ -70,6 +70,17 @@ export default class App extends Component<Props, State> {
     return;
   }
 
+  addTodo(todo: Todo) {
+    const newTodos: Todo[] = this.state.todos;
+    newTodos.push(todo);
+
+    this.setState({
+      todos: newTodos
+    })
+
+    this.toggleFormAddTodo()
+  }
+
   render() {
     const todoElementsTsx =
       this.state.todos.length ? this.state.todos.map((val: Todo, index: number) =>
@@ -82,7 +93,7 @@ export default class App extends Component<Props, State> {
     
     const formAddTodoElement =
       this.state.isFormShow ?
-        <FormAddTodo toggleForm={this.toggleFormAddTodo.bind(this)} /> : '';
+        <FormAddTodo toggleForm={this.toggleFormAddTodo.bind(this)} addTodo={this.addTodo.bind(this)}/> : '';
 
     return (
       <div>
