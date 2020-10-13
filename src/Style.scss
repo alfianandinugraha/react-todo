@@ -215,20 +215,34 @@ header#Header {
   height: 100vh;
   z-index: 1000;
   padding-top: 18px;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
 
-  .author {
+  .sidebar {
     &__title {
       font-size: 20px;
       color: $primary-color;
       margin-bottom: 1rem;
     }
+  }
 
+  .author {
     &__image {
       margin-bottom: 1rem;
     }
 
     &__biograph {
       line-height: 2rem;
+    }
+  }
+
+  .contact {
+    margin-top: auto;
+
+    &__url {
+      font-size: 14px;
+      color: $primary-color;
     }
   }
 }
