@@ -137,3 +137,24 @@ header#Header {
     }
   }
 }
+
+@keyframes show-backdrop {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: .56;
+  }
+}
+
+.backdrop {
+  background-color: #4b4b4b;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  animation: show-backdrop .5s forwards;
+}
