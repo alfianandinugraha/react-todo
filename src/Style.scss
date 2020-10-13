@@ -87,7 +87,8 @@ header#Header {
 
 .circle {
   height: 18px;
-  width: 18px;
+  width: 100%;
+  max-width: 18px;
   border: 1px solid #c9c9c9;
   border-radius: 18px;
   background-color: white;
