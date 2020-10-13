@@ -53,13 +53,17 @@ header#Header {
       align-items: center;
       position: relative;
 
-      p {
-        margin-left: 1rem;
-      }
-
       &__check {
         position: absolute;
         bottom: 20px;
+      }
+
+      &__content {
+        margin-left: 1rem;
+
+        p {
+          padding-right: 17px;
+        }
       }
     }
 

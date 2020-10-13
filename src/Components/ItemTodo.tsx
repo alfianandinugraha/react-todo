@@ -29,7 +29,9 @@ export default class ItemTodo extends Component<Props, State> {
         <div className="todo__item" onClick={() => this.props.toggelTodo(id)}>
           {checkElement}
           <div className="circle"></div>
-          <p>{content}</p>
+          <div className="todo__item__content">
+            <p>{content}</p>
+          </div>
         </div>
         <div className="todo__trash" onClick={() => this.props.deleteTodo(id)}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16.474" height="17.972" viewBox="0 0 16.474 17.972">
