@@ -207,3 +207,28 @@ header#Header {
 
   animation: show-backdrop .5s forwards;
 }
+
+#sidebar {
+  position: fixed;
+  background-color: white;
+  width: 90%;
+  height: 100vh;
+  z-index: 1000;
+  padding-top: 18px;
+
+  .author {
+    &__title {
+      font-size: 20px;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    &__image {
+      margin-bottom: 1rem;
+    }
+
+    &__biograph {
+      line-height: 2rem;
+    }
+  }
+}
