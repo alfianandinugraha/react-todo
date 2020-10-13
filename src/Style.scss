@@ -68,3 +68,21 @@ header#Header {
   border-radius: 18px;
   background-color: white;
 }
+
+.button {
+  padding: .75rem;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+  }
+
+  &--secondary {
+    background-color: white;
+    border: 1px solid $primary-color;
+    color: $primary-color;
+  }
+}
