@@ -13,7 +13,7 @@ export default class Header extends Component<Props, State> {
   render() {
     return (
       <header id="Header">
-        <div className="header">
+        <div className="header container">
           <h1>React ToDo</h1>
         </div>
       </header>
