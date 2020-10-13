@@ -24,6 +24,9 @@ export default class App extends Component<Props, State> {
             {todoElementsTsx}
           </div>
         </div>
+        <div className="show-form-btn container">
+          <button className="button button--primary show-form">Tambah Aktifitas</button>
+        </div>
       </div>
     )
   }
