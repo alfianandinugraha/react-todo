@@ -12,10 +12,10 @@ export default class ItemTodo extends Component<Props, State> {
   state = {}
 
   render() {
-    const { content } = this.props.todo;
+    const { content, isDone } = this.props.todo;
 
     return (
-      <section className="todo">
+      <section className={"todo" + (isDone ? " todo--done" : "")}>
         <div className="todo__item">
           <div className="circle"></div>
           <p>{content}</p>

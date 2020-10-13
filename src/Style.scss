@@ -59,6 +59,14 @@ header#Header {
       background-color: #ebebeb;
       transition: background-color .5s;
     }
+
+    &--done {
+      background-color: #ebebeb;
+
+      p {
+        text-decoration: line-through;
+      }
+    }
   }
 }
 
