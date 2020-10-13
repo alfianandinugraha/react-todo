@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 interface Props {
-  
+  toggleForm: () => any
 }
 interface State {
   
@@ -17,7 +17,9 @@ export default class FormAddTodo extends Component<Props, State> {
           <h3>Tambah Aktifitas</h3>
           <input type="text" placeholder="Nyatet biologi"/>
           <div className="add-todo__button-group">
-            <button className="button button--primary">Kembali</button>
+            <button
+              className="button button--primary"
+              onClick={() => this.props.toggleForm()}>Kembali</button>
             <button className="button button--secondary">Tambah</button>
           </div>
         </div>

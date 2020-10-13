@@ -26,7 +26,9 @@ export default class App extends Component<Props, State> {
   render() {
     const todoElementsTsx = [1, 2, 3, 4, 5].map((val: any, index: number) => <ItemTodo key={index} />)
     
-    const formAddTodoElement = this.state.isFormShow ? <FormAddTodo /> : '';
+    const formAddTodoElement =
+      this.state.isFormShow ?
+        <FormAddTodo toggleForm={this.toggleFormAddTodo.bind(this)} /> : '';
 
     return (
       <div>
