@@ -23,17 +23,17 @@ export default class App extends Component<Props, State> {
     todos: [
       {
         id: 1,
-        content: "Lorem, ipsum dolor.",
+        content: "Belajar Fisika",
         isDone: false
       },
       {
         id: 2,
-        content: "Lorem, ipsum dolor.",
-        isDone: false
+        content: "Belajar Biologi",
+        isDone: true
       },
       {
         id: 3,
-        content: "Lorem, ipsum dolor.",
+        content: "Mabar among us",
         isDone: false
       }
     ]
