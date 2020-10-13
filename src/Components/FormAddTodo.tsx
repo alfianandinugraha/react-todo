@@ -60,7 +60,7 @@ export default class FormAddTodo extends Component<Props, State> {
             </div>
           </div>
         </div>
-        <div className="backdrop"></div>
+        <div className="backdrop" onClick={() => this.props.toggleForm()}></div>
       </div>
     )
   }
