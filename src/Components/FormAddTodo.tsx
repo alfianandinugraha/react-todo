@@ -48,23 +48,23 @@ export default class FormAddTodo extends Component<Props, State> {
       <div>
         <div className="add-todo" id="add-todo">
           <div className="container">
-            <h3>Tambah Aktifitas</h3>
+            <h3>Add Activity</h3>
             <input
               type="text"
-              placeholder="Nyatet biologi"
+              placeholder="Do homework"
               value={this.state.todo.content}
               onChange={(e) => {this.updateContentTodo(e)}}
             />
             {
-              this.state.isValidContent ? '' : <i>Silahkan isi aktifitas dengan benar</i>
+              this.state.isValidContent ? '' : <i>Please insert activity correctly</i>
             }
             <div className="add-todo__button-group">
               <button
                 className="button button--primary"
-                onClick={() => this.toggleForm()}>Kembali</button>
+                onClick={() => this.toggleForm()}>Back</button>
               <button className="button button--secondary" onClick={
                 () => this.addTodo()
-              }>Tambah</button>
+              }>Add</button>
             </div>
           </div>
         </div>
