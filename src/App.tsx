@@ -19,23 +19,7 @@ export default class App extends Component<{}, State> {
   state: State = {
     isFormShow: false,
     isSidebarShow: false,
-    todos: [
-      {
-        id: 1,
-        content: "Belajar Fisika",
-        isDone: false
-      },
-      {
-        id: 2,
-        content: "Belajar Biologi",
-        isDone: true
-      },
-      {
-        id: 3,
-        content: "Mabar among us",
-        isDone: false
-      }
-    ]
+    todos: []
   }
 
   setTodos(todos: Todo[]) {
