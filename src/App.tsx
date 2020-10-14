@@ -4,10 +4,6 @@ import Header from './Components/Header'
 import ItemTodo from './Components/ItemTodo'
 import Sidebar from './Components/Sidebar'
 
-interface Props {
-  
-}
-
 export interface Todo {
   id: number;
   content: string;
@@ -19,7 +15,7 @@ interface State {
   todos: Todo[]
 }
 
-export default class App extends Component<Props, State> {
+export default class App extends Component<{}, State> {
   state: State = {
     isFormShow: false,
     isSidebarShow: false,
