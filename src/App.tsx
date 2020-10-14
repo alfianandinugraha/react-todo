@@ -134,7 +134,7 @@ export default class App extends Component<Props, State> {
           todo={val}
           toggelTodo={this.toggleTodo.bind(this)}
           deleteTodo={this.deleteTodo.bind(this)}
-        />) : <p className="no-todo-message">Tidak ada aktifitas, silahkan klik Tambah Aktifitas</p>;
+        />) : <p className="no-todo-message">No activities, please click Add Activity button</p>;
     
     const formAddTodoElement =
       this.state.isFormShow ?
@@ -147,7 +147,7 @@ export default class App extends Component<Props, State> {
         {sidebarElement}
         <Header toggleSidebar={this.toggleSidebar.bind(this)}/>
         <div className="container content">
-          <i className="message">Klik untuk menyelesaikan aktifitas</i>
+          <i className="message">Click to finish activity</i>
           <div id="todos">
             {todoElementsTsx}
           </div>
@@ -156,7 +156,7 @@ export default class App extends Component<Props, State> {
           <button
             className="button button--primary show-form"
             onClick={() => this.toggleFormAddTodo()}
-          >Tambah Aktifitas</button>
+          >Add Activity</button>
         </div>
         {formAddTodoElement}
       </div>
