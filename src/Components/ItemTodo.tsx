@@ -6,13 +6,8 @@ interface Props {
   toggelTodo: (id: number) => any;
   deleteTodo: (id: number) => any;
 }
-interface State {
-  
-}
 
-export default class ItemTodo extends Component<Props, State> {
-  state = {}
-
+export default class ItemTodo extends Component<Props, {}> {
   render() {
     const { id, content, isDone } = this.props.todo;
 
