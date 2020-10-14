@@ -3,13 +3,8 @@ import React, { Component } from 'react'
 interface Props {
   toggleSidebar: () => any;
 }
-interface State {
-  
-}
 
-export default class Header extends Component<Props, State> {
-  state = {}
-
+export default class Header extends Component<Props, {}> {
   render() {
     return (
       <header id="Header">
